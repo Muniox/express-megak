@@ -3,16 +3,10 @@ const router = express.Router();
 const path = require("path");
 const {readFile} = require("fs/promises");
 
-const base = path.join(__dirname, '../', 'data');
-
-function safeJoin(base, target) {
-    const targetPath = '.' + path.normalize('/' + target);
-    return path.resolve(base, targetPath);
-}
 
 router.get('/name/show', async (req, res, next) => {
     try {
-        const data = await readFile(safeJoin(base, 'data.json'));
+        const data = await readFile(path.join(__dirname,'../data', 'data.json'));
         const name = JSON.parse(data.toString()).name;
         res.send(name);
     } catch (error) {
