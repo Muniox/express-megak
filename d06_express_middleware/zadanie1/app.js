@@ -5,11 +5,11 @@ const createIPList = require('./utils/createIPList');
 const cors = require('cors');
 const app = express();
 
-//Create IP list id data no exist
-(async () => await createIPList)();
+//Create IP list if data no exist
+void createIPList();
 
 //Create Database if data no exist
-(async () => await createDatabaseFile)();
+void createDatabaseFile();
 
 //Middleware
 app.use(express.static('public'));
