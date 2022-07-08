@@ -17,7 +17,7 @@ app.post('/cookie/set', async (req, res) => {
 
 app.get('/cookie/show', (req, res) => {
     const nameCookie = req.cookies['name-cookie'];
-    res.json({ message: nameCookie });
+    res.json({ message: `Imię zapisane w ciasteczku to: ${nameCookie}` });
 });
 
 app.post('/cookie/check', (req, res) => {
