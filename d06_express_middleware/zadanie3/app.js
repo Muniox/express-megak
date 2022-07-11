@@ -22,13 +22,12 @@ app.get('/cookie/show', (req, res) => {
 
 app.post('/cookie/check', (req, res) => {
     const nameCookie  = req.cookies['name-cookie'];
-    const { name } = req.body
+    const { name } = req.body;
     if (name === nameCookie) {
         res.json({ message: 'Imię zostało już zapisane w ciasteczku' });
     } else {
         res.json({ message: 'Imię nie zostało jeszcze zapisane w ciasteczku' });
     }
-    
 });
 
 //jeśli nie ma ciastka to odczytasz je jako undefined
