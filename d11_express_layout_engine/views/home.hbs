@@ -2,16 +2,40 @@
     <h1>witaj, {{ firstName }} you are {{age}} years old</h1>
 {{/with}}
 
+{{!--foreach dla każdego--}}
 {{#each dates}}
     <ul>
         <li>{{this}}</li>
     </ul>
 {{/each}}
 
+{{!--użycie partiali--}}
 {{> share}}
 
+{{!--użycie else jeśli coś nie istnieje--}}
 {{#each dates2}}
     {{this}}
 {{else}}
-    <li>brak wyników.</li><li></li>
+    <li>brak wyników.</li>
 {{/each}}
+
+{{!--warunki--}}
+{{#if person.firstName}}
+    <h1>{{person.firstName}}</h1>
+{{/if}}
+
+{{#unless person.firstName}}
+    <h1>Brak pierwszego imienia</h1>
+{{/unless}}
+
+{{!--warunki prościej!--}}
+{{#if person.firstName}}
+    <h1>{{person.firstName}}</h1>
+{{else}}
+    <h1>Brak pierwszego imienia</h1>
+{{/if}}
+
+{{!--console.log w handlebars!--}}
+{{log 'firstname:' person.firstName}}
+
+
