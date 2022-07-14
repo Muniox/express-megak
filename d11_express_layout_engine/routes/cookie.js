@@ -5,17 +5,14 @@ cookieRouter
     .post('/set', (req, res) => {
         const { name } = req.body;
         res
-            .cookie('name', name, { maxAge: 1000 * 60 * 60 * 24 * 30})
-            .send(`
-            <!DOCTYPE html>
-            <html>
-            <body>
-                <img src="/banner.png" alt="banner">
-            </body>
-            </html>
-            <hr>
-            <p>Zapisano imię.</p>
-            `);
+            .cookie('name', name, { maxAge: 1000 * 60 * 60 * 24 * 30 })
+            .render('cookie-set',
+                // req.body //nigdy tak nie rób, nie przesyłaj wszystkich informacjo do użytkownika
+                {
+                    name,
+                    html: '<strong>Pragnę HTML!</strong>'
+                }
+            ); 
     })
 
     .get('/show', (req, res) => {

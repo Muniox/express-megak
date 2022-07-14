@@ -11,14 +11,17 @@ app.engine('.hbs', hbs.engine({extname: '.hbs'}));
 app.set('view engine', '.hbs');
 
 app.use('/cookie', cookieRouter);
+// app.get('/', (req, res) => { //jeśli chcesz renderować stronę główną musisz wyrzucić index z public
+//     res.render('home');
+// });
 app.get('/hi', (req, res) => {
     res.render('home', {
         person: {
             firstName: 'Paweł',
             age: 123
         },
-        dates: [1990, 1991, 1992, 1993, 1994]
-        //@TODO 8 min
+        dates: [1990, 1991, 1992, 1993, 1994],
+        dates2: []
     });
 });
 

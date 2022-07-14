@@ -1,3 +1,17 @@
 {{#with person}}
     <h1>witaj, {{ firstName }} you are {{age}} years old</h1>
 {{/with}}
+
+{{#each dates}}
+    <ul>
+        <li>{{this}}</li>
+    </ul>
+{{/each}}
+
+{{> share}}
+
+{{#each dates2}}
+    {{this}}
+{{else}}
+    <li>brak wyników.</li><li></li>
+{{/each}}
