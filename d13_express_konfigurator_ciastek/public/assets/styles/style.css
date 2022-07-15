@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    font-family: 'Lobster', cursive;
+}
+
+a {
+    margin: 10px;
+    padding: 5px;
+    display: inline-block;
+    border: 1px dotted black;
+    text-decoration: none;
+    color: black;
+}
+
+.title {
+    height: 18px
+}
+
+#logo {
+    height: 50px;
+}
+
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+.cookie-preview {
+    width: 601px;
+    height: 640px;
+}
+
+.select {
+    display: flex;
+    gap: 30px;
+}
