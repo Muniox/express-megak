@@ -1,0 +1,12 @@
+<h3>Selected parts of cookie</h3>
+<ul>
+    <li>Base: {{cookie.base}} - {{pricify (findPrice bases cookie.base)}} PLN</li>
+    {{#each cookie .addons}}
+    {{!-- @root oznacza, że bierzemy zmienną addons z głównego obiektu, 
+    jeśli tego nie dodamy nie będzie wiedział który addons wybrać --}}
+        <li>Addon: {{this}} - {{pricify (findPrice @root.addons this)}} PLN</li>
+    {{/each}}
+</ul>
+<p>
+    <strong>Total of {{pricify sum}} PLN</strong>
+</p>

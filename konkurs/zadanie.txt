@@ -1,0 +1,16 @@
+1. Interaktywna aplikacja webowa - lista zadań do zrobienia
+Twoim zadaniem jest stworzyć aplikację webową Express, w której możesz przechowywać liste rzeczy do zrobienia.
+
+Do przechowywania użyj pliku JSON, który będziesz odczytywać i zapisywać asychronicznie
+
+Powinno dać sie wyświetlać już istniejące zadania, dodawać nowe, usuwać, oznaczać i odznaczać jako zakończone
+
+Aplikacja ma spełniać takie założenia
+- Dane mają pozostać nawet kiedy wyłączysz komputer, nie mają znikać. Mają być dostępne takie same niezależnie od użytej przeglądarki (dane mają być zapisane w pliku)
+- Wszystkie rzeczy powinny wykonywać się bez żadnego przeładowania, w ramach strony głównej
+
+Podpowiedź1: przechowaj zadania w formie obiektu: z tekstem oraz informacją boolean o tym czy zakończono.
+
+Podpowiedź2: aby aktualizować, oznaczać i odznaczać zadania posłuż się ich indeksem - i go wysyłaj do backendu.
+
+Podpowiedź3: po modyfikacji, oznaczeniu lub odznaczeniu możesz po prostu usunąć wszystko z widoku i wysłać ponownie zapytanie do back-endu o aktualna listę dzięki temu unikniesz desynchronizacji (choć nie jest to najwydajniejszy sposób).

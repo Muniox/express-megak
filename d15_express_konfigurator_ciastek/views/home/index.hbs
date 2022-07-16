@@ -1,0 +1,30 @@
+<h1 class="title">Configure your cookie</h1>
+
+
+<div class="select">
+        <fieldset>
+            <legend>Select cookie base</legend>
+            {{> base-selector}}
+        </fieldset>
+
+    <fieldset>
+        <legend>Select cookie addon</legend>
+        {{#each addons}}
+            <a href="/configurator/add-addon/{{this.[0]}}">Add {{this.[0]}} for {{this.[1]}} PLN</a>
+        {{/each}}
+    </fieldset>
+</div>
+
+{{#if cookie.base}}
+    {{> cookie-preview}}
+    {{> addons}}
+    {{else}}
+        <div>
+            <p><strong>please select base of your cookie to seeit's preview and summary</strong></p>
+            <p>
+                {{> base-selector}}
+            </p>
+        </div>
+
+{{/if}}
+
