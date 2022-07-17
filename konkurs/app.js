@@ -46,8 +46,8 @@ app.post('/create', async (req, res) => {
 app.put('/completed/:id', async (req, res) => {
     const { id } = req.params;
     const data = JSON.parse(await readFile(join(__dirname, 'data', 'todo-data.json'), {encoding: "utf-8"}));
-    const arrayElement = data['arrayData'].find( item => item.id === Number(id)); //@TODO jeśli nie znalazło id to coś tam zwraca
-    if (arrayElement === 'undefined') {
+    const arrayElement = data['arrayData'].find( item => item.id === Number(id));
+    if (!arrayElement) {
         res.json({
             message: "Index cannot be found!"
         });
@@ -59,7 +59,32 @@ app.put('/completed/:id', async (req, res) => {
             toggle: true
         });
     }
-
 });
+
+app.delete('/delete/:id', async (req, res) => {
+    const { id } = req.params;
+    const data = JSON.parse(await readFile(join(__dirname, 'data', 'todo-data.json'), {encoding: "utf-8"}));
+    const arrayElement = data['arrayData'].find( item => item.id === Number(id)); //@TODO przypatrzeć się bo coś nie chce przejść na undefined
+    if (!arrayElement) {
+        res.json({
+            message: "Index cannot be found!"
+        });
+    } else {
+        const elementIndex = data['arrayData'].indexOf(arrayElement);
+        data['arrayData'][elementIndex]["not-cleared"] = !data['arrayData'][elementIndex]["not-cleared"];
+        await writeFile(join(__dirname, 'data', 'todo-data.json'), JSON.stringify(data, null,' '), {encoding: "utf-8"} );
+        res.json({
+            delete: true
+        });
+    }
+});
+
+
+app.get('*', function(req, res){
+    res
+        .status(404)
+        .render('404');
+});
+
 
 module.exports = app;

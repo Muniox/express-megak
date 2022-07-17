@@ -9,7 +9,7 @@
   {
    "id": 2,
    "content": "make Express app",
-   "completed": false,
+   "completed": true,
    "not-cleared": true
   },
   {
@@ -34,7 +34,7 @@
    "id": 6,
    "content": "czy działa 4",
    "completed": false,
-   "not-cleared": true
+   "not-cleared": false
   }
  ]
 }

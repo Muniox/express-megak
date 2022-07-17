@@ -6,9 +6,9 @@ back-end:
 3.Stworzyć route na '/' na który będą wysyłane dane - zrobione
 4.Zrobić odczytywanie jsona, express.json() - zrobione
 5.zapisywać informacje do bazy(json) z użyciem id - zrobione
-6.zrobić przekierowanie na błąd 404
-7.zrobić przekierowanie na błąd 500
-8.zrobić usuwanie za pomocą flagi
+6.zrobić przekierowanie na błąd 404 - zrobione
+7.zrobić usuwanie za pomocą flagi
+8.zrobić edytowanie
 
 
 
@@ -24,3 +24,4 @@ front-end:
 9.wybór skończonych
 10.wybór wszystkich
 11. wyczyszczenie wszystkich zaznaczonych
+12.zrobić edytowanie, zmiana value
