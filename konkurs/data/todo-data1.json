@@ -1,0 +1,16 @@
+{
+ "arrayData": [
+   {
+    "id": 1,
+    "content": "Buy unicorn",
+    "completed": false,
+     "not-cleared": true
+  },
+    {
+      "id": 2,
+      "content": "make Express app",
+      "completed": false,
+      "not-cleared": true
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+TODO PLAN:
+
+back-end:
+1.Stworzyć bazę(json) przykładowych rzeczy do zrobienia - zrobione
+2.Odczytać plik bazy(json) i jeśli nie istnieje to go stworzyć - zrobione
+3.Stworzyć route na '/' na który będą wysyłane dane - zrobione
+4.Zrobić odczytywanie jsona, express.json() - zrobione
+5.zapisywać informacje do bazy(json) z użyciem id - zrobione
+6.zrobić przekierowanie na błąd 404
+7.zrobić przekierowanie na błąd 500
+8.zrobić usuwanie za pomocą flagi
+
+
+
+front-end:
+1.stworzyć szablon handlebars - zrobione
+2.podzielić części strony głównej na partiale - zrobione
+3.wyświetlić dane za pomocą zbudowanego partiala, jeśli dane nie istnieją to nic nie wyświetlać defaultowo - zrobione
+4.zrobić wysyłanie fetchem -zrobione
+5.odznaczanie i zaznaczanie fetchem - zrobione
+6.wysyłać usunięcie fetchem
+7.zrobić zaznaczenie wszystkich checkboxów
+8.wybór aktywnych
+9.wybór skończonych
+10.wybór wszystkich
+11. wyczyszczenie wszystkich zaznaczonych
