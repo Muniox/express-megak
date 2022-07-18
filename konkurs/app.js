@@ -13,7 +13,7 @@ app.set('view engine', 'hbs');
 app.use(express.json());
 app.use(express.static('public'));
 
-//check if database(json) exist, if not create and return data
+//check if database(json) exist, if not create database
 void databaseCheck();
 
 //routes

@@ -9,8 +9,8 @@
   {
    "id": 2,
    "content": "make Express app",
-   "completed": true,
-   "not-cleared": true
+   "completed": false,
+   "not-cleared": false
   },
   {
    "id": 3,
@@ -26,13 +26,31 @@
   },
   {
    "id": 5,
-   "content": "czy działa 3",
+   "content": "działa",
    "completed": false,
    "not-cleared": true
   },
   {
    "id": 6,
-   "content": "czy działa 4",
+   "content": "gg",
+   "completed": false,
+   "not-cleared": true
+  },
+  {
+   "id": 7,
+   "content": "gg2",
+   "completed": false,
+   "not-cleared": false
+  },
+  {
+   "id": 8,
+   "content": "gg3",
+   "completed": false,
+   "not-cleared": false
+  },
+  {
+   "id": 9,
+   "content": "gg4",
    "completed": false,
    "not-cleared": false
   }
