@@ -7,7 +7,7 @@ back-end:
 4.Zrobić odczytywanie jsona, express.json() - zrobione
 5.zapisywać informacje do bazy(json) z użyciem id - zrobione
 6.zrobić przekierowanie na błąd 404 - zrobione
-7.zrobić usuwanie za pomocą flagi
+7.zrobić usuwanie za pomocą flagi - zrobione
 8.zrobić edytowanie
 
 
@@ -18,7 +18,7 @@ front-end:
 3.wyświetlić dane za pomocą zbudowanego partiala, jeśli dane nie istnieją to nic nie wyświetlać defaultowo - zrobione
 4.zrobić wysyłanie fetchem -zrobione
 5.odznaczanie i zaznaczanie fetchem - zrobione
-6.wysyłać usunięcie fetchem
+6.wysyłać usunięcie fetchem - zrobione
 7.zrobić zaznaczenie wszystkich checkboxów
 8.wybór aktywnych
 9.wybór skończonych

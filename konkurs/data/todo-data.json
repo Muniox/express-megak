@@ -34,7 +34,7 @@
    "id": 6,
    "content": "gg",
    "completed": false,
-   "not-cleared": true
+   "not-cleared": false
   },
   {
    "id": 7,
