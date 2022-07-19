@@ -136,5 +136,6 @@ turnAllButton.addEventListener('click', (e) => {
         if (item.name != 'check') {
             item.checked = e.target.checked;
         }
+        
     });
 });
