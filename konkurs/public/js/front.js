@@ -2,7 +2,8 @@ const sendTaskInput = document.querySelector('#sendTask');
 const itemList = document.querySelector('#itemList');
 const counter = document.querySelector('#counter');
 const checkbox = document.querySelectorAll('input[class="toggle"]');
-let closeTask = document.querySelectorAll('.destroy');
+const closeTask = document.querySelectorAll('.destroy');
+const turnAllButton = document.querySelector('#toggle-all');
 
 //create new task and send all information to backend about created task
 //@TODO należy stworzyć add event listener do każdego tworzonego elementu: https://stackoverflow.com/questions/50624631/event-listener-doesnt-work-after-adding-a-new-element
@@ -26,6 +27,7 @@ sendTaskInput.addEventListener('keypress', async (event) => {
         const input = document.createElement('input');
         input.setAttribute("type", "checkbox");
         input.setAttribute("data-id", `${data.id}`);
+        input.setAttribute("data-task", 'true');
         input.classList.add('toggle');
         //add event listener for checkbox
         input.addEventListener( 'click', async (event) => {
@@ -44,10 +46,7 @@ sendTaskInput.addEventListener('keypress', async (event) => {
                 !input.checked;
             } else {
                 event.stopPropagation();
-            }
-
-            //count how many items are checked/done
-            counter.textContent = document.querySelectorAll('input[type="checkbox"]:checked').length.toString();
+            }       
         });
         //label create
         const label = document.createElement('label');
@@ -82,10 +81,13 @@ sendTaskInput.addEventListener('keypress', async (event) => {
         div.appendChild(button);
         newItem.appendChild(inputEdit);
         itemList.appendChild(newItem);
+
+        //count how many items are checked/done
+        counter.textContent = (document.querySelectorAll('input[data-task="true"]').length - document.querySelectorAll('input[data-task="true"]:checked').length).toString();
     }});
 
 //count how many items are checked/done
-counter.textContent = document.querySelectorAll('input[type="checkbox"]:checked').length.toString();
+counter.textContent = (document.querySelectorAll('input[data-task="true"]').length - document.querySelectorAll('input[data-task="true"]:checked').length).toString();
 
 checkbox.forEach(el => el.addEventListener( 'click', async (event) => {
 
@@ -106,7 +108,7 @@ checkbox.forEach(el => el.addEventListener( 'click', async (event) => {
     }
 
     //count how many items are checked/done
-    counter.textContent = document.querySelectorAll('input[type="checkbox"]:checked').length.toString();
+    counter.textContent = (document.querySelectorAll('input[data-task="true"]').length - document.querySelectorAll('input[data-task="true"]:checked').length).toString();
 }));
 
 //delete with Flag
@@ -127,3 +129,12 @@ closeTask.forEach(el =>
 }));
 
 
+//select all check buttons
+turnAllButton.addEventListener('click', (e) => {
+    const allCheckInputs = document.querySelectorAll('input[data-task="true"]');
+    allCheckInputs.forEach(item => {
+        if (item.name != 'check') {
+            item.checked = e.target.checked;
+        }
+    });
+});

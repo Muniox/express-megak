@@ -13,7 +13,11 @@
                     {{/if}}
                 >
                     <div class="view">
-                        <input class="toggle" data-id="{{this.id}}" type="checkbox"
+                        <input 
+                            class="toggle" 
+                            data-id="{{this.id}}" 
+                            type="checkbox"
+                            data-task="true"
                             {{#if this.completed}}
                                checked
                             {{/if}}

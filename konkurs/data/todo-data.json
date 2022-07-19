@@ -10,49 +10,7 @@
    "id": 2,
    "content": "make Express app",
    "completed": false,
-   "not-cleared": false
-  },
-  {
-   "id": 3,
-   "content": "czy działa",
-   "completed": false,
    "not-cleared": true
-  },
-  {
-   "id": 4,
-   "content": "czy działa2",
-   "completed": false,
-   "not-cleared": true
-  },
-  {
-   "id": 5,
-   "content": "działa",
-   "completed": false,
-   "not-cleared": true
-  },
-  {
-   "id": 6,
-   "content": "gg",
-   "completed": false,
-   "not-cleared": false
-  },
-  {
-   "id": 7,
-   "content": "gg2",
-   "completed": false,
-   "not-cleared": false
-  },
-  {
-   "id": 8,
-   "content": "gg3",
-   "completed": false,
-   "not-cleared": false
-  },
-  {
-   "id": 9,
-   "content": "gg4",
-   "completed": false,
-   "not-cleared": false
   }
  ]
 }
