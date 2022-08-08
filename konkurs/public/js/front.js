@@ -102,7 +102,6 @@ checkbox.forEach(el => el.addEventListener( 'click', async (event) => {
     if (data.toggle) {
         //toggle check on li item
         el.parentElement.parentElement.classList.toggle("completed");
-        !el.checked;
     } else {
         event.stopPropagation();
     }
@@ -130,12 +129,26 @@ closeTask.forEach(el =>
 
 
 //select all check buttons
-turnAllButton.addEventListener('click', (e) => {
+turnAllButton.addEventListener('click',  (e) => {
     const allCheckInputs = document.querySelectorAll('input[data-task="true"]');
-    allCheckInputs.forEach(item => {
-        if (item.name != 'check') {
+    allCheckInputs.forEach( async (item) => {
+        if (item.name !== 'check') {
             item.checked = e.target.checked;
+
+            // const response = await fetch(`/completed/${item.checked.dataset.id}`, {
+            //         method: 'PUT',
+            //         headers: {
+            //             'Content-Type': 'application/json'
+            //         },
+            //     }
+            // );
+            // const data = await response.json();
+            // if (data.toggle) {
+            //     //toggle check on li item
+            //     item.checked.parentElement.parentElement.classList.toggle("completed");
+            // }
+            // //count how many items are checked/done
+            // counter.textContent = (document.querySelectorAll('input[data-task="true"]').length - document.querySelectorAll('input[data-task="true"]:checked').length).toString();
         }
-        
     });
 });

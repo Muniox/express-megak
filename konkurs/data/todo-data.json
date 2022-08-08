@@ -3,7 +3,7 @@
   {
    "id": 1,
    "content": "Buy unicorn",
-   "completed": false,
+   "completed": true,
    "not-cleared": true
   },
   {

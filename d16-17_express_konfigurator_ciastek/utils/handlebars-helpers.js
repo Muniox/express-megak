@@ -11,7 +11,11 @@ const handlebarsHelpers = {
         return price;
     },
 
-    pricify: price => price.toFixed(2)
+    pricify: price => price.toFixed(2),
+
+    isNotInArray: (array, element) => {
+        return !array.includes(element);
+    }
 };
 
 module.exports = {

@@ -4,7 +4,11 @@
     {{#each cookie.addons}}
     {{!-- @root oznacza, że bierzemy zmienną addons z głównego obiektu, 
     jeśli tego nie dodamy nie będzie wiedział który addons wybrać --}}
-        <li>Addon: {{this}} - {{pricify (findPrice @root.addons this)}} PLN</li>
+        <li>Addon: {{this}} - {{pricify (findPrice @root.addons this)}} PLN
+            {{#if @root.noDeleteBtn}}
+                <a href="/configurator/delete-addon/{{this}}">Delete</a>
+            {{/if}}
+        </li>
     {{/each}}
 </ul>
 <p>

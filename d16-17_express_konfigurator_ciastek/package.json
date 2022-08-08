@@ -1,17 +1,17 @@
 {
-  "name": "d15_express_konfigurator_ciastek",
+  "name": "d16_express_konfigurator_ciastek",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "node app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "eslint": "^8.19.0"
+    "eslint": "^8.20.0"
   },
   "dependencies": {
     "cookie-parser": "^1.4.6",

@@ -1,0 +1,40 @@
+<h1 class="title">Configure your cookie</h1>
+
+
+<div class="select">
+        <fieldset>
+            <legend>Select cookie base</legend>
+            {{> base-selector}}
+        </fieldset>
+
+    <fieldset>
+        <legend>Select cookie addon</legend>
+        {{#each addons}}
+                <a
+                    {{#if (isNotInArray @root.cookie.addons this.[0])}}
+                        href="/configurator/add-addon/{{this.[0]}}"
+                        class="btn">
+                            Add {{this.[0]}} for {{this.[1]}} PLN
+                        {{else}}
+                        class="btn_disabled">
+                        Add {{this.[0]}} for {{this.[1]}} PLN
+                    {{/if}}
+                </a>
+        {{/each}}
+    </fieldset>
+</div>
+
+{{#if cookie.base}}
+    {{> cookie-preview}}
+    {{> addons}}
+    <a href="/order/summary" class="btn btn-big">Order now!</a>
+    {{else}}
+        <div>
+            <p><strong>please select base of your cookie to see it's preview and summary</strong></p>
+            <p>
+                {{> base-selector}}
+            </p>
+        </div>
+
+{{/if}}
+
