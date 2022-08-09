@@ -1,0 +1,16 @@
+<h3>Selected parts of cookie</h3>
+<ul>
+    <li>Base: {{cookie.base}} - {{pricify (findPrice allBases cookie.base)}} PLN</li>
+    {{#each cookie.addons}}
+    {{!-- @root oznacza, że bierzemy zmienną addons z głównego obiektu, 
+    jeśli tego nie dodamy nie będzie wiedział który addons wybrać --}}
+        <li>Addon: {{this}} - {{pricify (findPrice @root.allAddons this)}} PLN
+            {{#unless @root.noDeleteBtn}}
+                <a href="/configurator/delete-addon/{{this}}">Delete</a>
+            {{/unless}}
+        </li>
+    {{/each}}
+</ul>
+<p>
+    <strong>Total of {{pricify sum}} PLN</strong>
+</p>
