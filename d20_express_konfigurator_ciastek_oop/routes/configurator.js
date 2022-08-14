@@ -1,15 +1,25 @@
 const express = require('express');
-const {getAddonsFromReq} = require("../utils/get-addons-from-req");
-const {COOKIE_ADDONS, COOKIE_BASES} = require("../data/cookies-data");
-const {showErrorPage} = require("../utils/showErrorPage");
-const configuratorRouter = express.Router();
 
-configuratorRouter
-    .get('/select-base/:baseName', (req, res) => {
+
+class ConfiguratorRouter {
+    constructor(cmapp) {
+        this.cmapp = cmapp;
+        this.router = express.Router();
+        this.setUpRoutes();
+    }
+
+    setUpRoutes() {
+        this.router
+            .get('/select-base/:baseName', this.selectBase)
+            .get('/add-addon/:addonName', this.addAddon)
+            .get('/delete-addon/:addonName', this.deleteAddon);
+    }
+
+    selectBase = (req, res) => {
         const { baseName } = req.params;
 
-        if (!COOKIE_BASES[baseName]) {
-            return showErrorPage(res, `There is no such base as ${baseName}.`);
+        if (!this.cmapp.data.COOKIE_BASES[baseName]) {
+            return this.cmapp.showErrorPage(res, `There is no such base as ${baseName}.`);
         }
 
         res
@@ -17,19 +27,19 @@ configuratorRouter
             .render('configurator/base-selected', {
                 baseName
             });
-    })
+    };
 
-    .get('/add-addon/:addonName', (req, res) => {
+    addAddon = (req, res) => {
         const { addonName } = req.params;
 
-        if (!COOKIE_ADDONS[addonName]) {
-            return showErrorPage(res, `There is no such addon as ${addonName}.`);
+        if (!this.cmapp.data.COOKIE_ADDONS[addonName]) {
+            return this.cmapp.showErrorPage(res, `There is no such addon as ${addonName}.`);
         }
 
-        const addons = getAddonsFromReq(req);
+        const addons = this.cmapp.getAddonsFromReq(req);
 
         if (addons.includes(addonName)){
-            return showErrorPage(res, `${addonName} is already on your cookie. You cannot add it twice.`);
+            return this.cmapp.showErrorPage(res, `${addonName} is already on your cookie. You cannot add it twice.`);
         }
 
         addons.push(addonName);
@@ -39,17 +49,16 @@ configuratorRouter
             .render('configurator/added', {
                 addonName
             });
-    })
+    };
 
-    .get('/delete-addon/:addonName', (req, res) => {
+    deleteAddon = (req, res) => {
         const { addonName } = req.params;
 
-
-        const oldAddons = getAddonsFromReq(req);
+        const oldAddons = this.cmapp.getAddonsFromReq(req);
 
         if (!oldAddons.includes(addonName)) {
-            return showErrorPage(res, `Cannot delete something that isn't already added to the cookie.
-            ${addonName} not found on cookie.`);
+            return this.cmapp.showErrorPage(res,
+                `Cannot delete something that isn't already added to the cookie. ${addonName} not found on cookie.`);
         }
         const newAddons = oldAddons.filter(addon => addon !== addonName);
 
@@ -58,6 +67,7 @@ configuratorRouter
             .render('configurator/deleted', {
                 addonName
             });
-    });
+    };
+}
 
-module.exports = configuratorRouter;
+module.exports = ConfiguratorRouter;
