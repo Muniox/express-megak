@@ -1,11 +1,13 @@
 {
-  "name": "d18_express_konfigurator_ciastek",
+  "name": "d20_express_konfigurator_ciastek",
   "version": "1.0.0",
-  "description": "",
+  "description": "nazwa main jest ważna jeśli wykorzystujemy EcmaScript modules, czyli import",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
+    "start": "npx nodemon app.js",
+    "start:prod": "node app.js",
+    "audit": "npm audit"
   },
   "keywords": [],
   "author": "",
