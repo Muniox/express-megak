@@ -1,0 +1,16 @@
+[
+  {
+    "id":"1d4bd0b1-f754-44c5-a91f-1f01d823c3c0",
+    "name":"Tester",
+    "mail":"example@com.pl",
+    "notes": "",
+    "nextContactAt": "Jutro"
+  },
+  {
+    "id":"1d4cc0b1-f754-44d5-a91f-1f01g823c3c0",
+    "name":"Tester",
+    "mail":"example@com.pl",
+    "notes": "",
+    "nextContactAt": "Jutro"
+  }
+]

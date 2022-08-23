@@ -1,0 +1,22 @@
+table {
+    width: 80%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+tr {
+    margin: 2px;
+    background-color: #dcdcdc;
+}
+
+thead tr, .header-of-left th{
+    background-color: #a4a4a4;
+}
+
+tbody tr:nth-child(2n){
+    background-color: #f3f3f3;
+}
+
+td, th {
+    padding: 4px;
+}
