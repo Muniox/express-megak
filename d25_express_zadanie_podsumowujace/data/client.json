@@ -1,0 +1,23 @@
+[
+  {
+    "id": "1d4bd0b1-f754-44c5-a91f-1f01d823c3c0",
+    "name": "Tester",
+    "mail": "example@com.pl",
+    "notes": "",
+    "nextContactAt": "Jutro"
+  },
+  {
+    "id": "042cb2db-d306-4654-900a-1474158689d9",
+    "name": "testowy2",
+    "mail": "test@rxample.com",
+    "notes": "zadzwonić",
+    "nextContactAt": "2022-08-04"
+  },
+  {
+    "id": "c2ca37c5-965a-44ec-81e0-eb1c6ffe135a",
+    "name": "testowy2",
+    "mail": "example@com.pl",
+    "notes": "umówić3",
+    "nextContactAt": "2022-08-25"
+  }
+]
