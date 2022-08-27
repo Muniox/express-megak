@@ -1,16 +1,17 @@
 const {readFile, writeFile} = require('fs/promises');
 const {join} = require('path');
 const {v4: uuidv4} = require('uuid');
-
+const {ClientRecord} = require('../records/client-record');
 
 class Db {
     constructor(dbFileName) {
         this.dbFileName = join(__dirname, '../data', dbFileName);
-        this._load();
+        void this._load();
     }
 
     async _load() {
-        return this._data = JSON.parse(await readFile(this.dbFileName, 'utf8'));
+        this._data = JSON.parse(await readFile(this.dbFileName, 'utf8')).map(obj => new ClientRecord(obj));
+        console.log(this._data); //pokazuje nam naszą zamianę na obiekty w celu obsługi błędów
     }
 
     async _save() {
@@ -19,10 +20,10 @@ class Db {
 
     async create(obj) {
         const id = uuidv4();
-        this._data.push({
-            id: id,
+        this._data.push(new ClientRecord({
+            id,
             ...obj
-        });
+        }));
         await this._save();
         return id;
     }
