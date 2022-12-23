@@ -6,7 +6,7 @@
 - Dzień 2 z 25 - Obiekt request [39m]
 - Dzień 3 z 25 - Zaawansowany routing [28m]
 - Dzień 4 z 25 - Response / Przesyłanie plików [30m]
-- Dzień 5 z 25 - Cooki (ciasteczka) [36m]
+- Dzień 5 z 25 - Cookie (ciasteczka) [36m]
 
 #### Tydzień 2 z 5
 - Dzień 6 z 25 - Middleware [29m]
